@@ -128,22 +128,23 @@ data "aws_availability_zones" "available" {
 
 data "aws_ami" "aws-linux" {
   most_recent = true
-  owners      = ["amazon"]
-
+  owners      = ["aws-marketplace"]
+# "Name": "nodesample_080623-f932c99a-cdfa-4fcc-a11d-688fa1c01991",
+# "ImageLocation": "aws-marketplace/nodesample_080623-f932c99a-cdfa-4fcc-a11d-688fa1c01991",
   filter {
     name   = "name"
-    values = ["amzn-ami-hvm*"]
+    values = ["nodesample_080623-f932c99a-cdfa-4fcc-a11d-688fa1c01991"]
   }
 
-  filter {
-    name   = "root-device-type"
-    values = ["ebs"]
-  }
+  # filter {
+  #   name   = "root-device-type"
+  #   values = ["ebs"]
+  # }
 
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
+  # filter {
+  #   name   = "virtualization-type"
+  #   values = ["hvm"]
+  # }
 }
 
 # //////////////////////////////
